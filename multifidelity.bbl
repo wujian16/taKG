@@ -1,0 +1,181 @@
+\begin{thebibliography}{}
+
+\bibitem[Bergstra and Bengio, 2012]{bergstra2012random}
+Bergstra, J. and Bengio, Y. (2012).
+\newblock Random search for hyper-parameter optimization.
+\newblock {\em Journal of Machine Learning Research}, 13(Feb):281--305.
+
+\bibitem[Domhan et~al., 2015]{domhan2015speeding}
+Domhan, T., Springenberg, J.~T., and Hutter, F. (2015).
+\newblock Speeding up automatic hyperparameter optimization of deep neural
+  networks by extrapolation of learning curves.
+\newblock In {\em International Joint Conferences on Artificial Intelligence}.
+
+\bibitem[Falkner et~al., 2018]{falkner2018bohb}
+Falkner, S., Klein, A., and Hutter, F. (2018).
+\newblock {BOHB}: Robust and efficient hyperparameter optimization at scale.
+\newblock In {\em International Conference on Machine Learning}, pages
+  1436--1445.
+
+\bibitem[Foreman-Mackey et~al., 2013]{foreman2013emcee}
+Foreman-Mackey, D., Hogg, D.~W., Lang, D., and Goodman, J. (2013).
+\newblock emcee: the {MCMC} hammer.
+\newblock {\em Publications of the Astronomical Society of the Pacific},
+  125(925):306.
+
+\bibitem[Frazier et~al., 2009]{frazier2009knowledge}
+Frazier, P., Powell, W., and Dayanik, S. (2009).
+\newblock The knowledge-gradient policy for correlated normal beliefs.
+\newblock {\em INFORMS Journal on Computing}, 21(4):599--613.
+
+\bibitem[Frazier, 2018]{frazier2018tutorial}
+Frazier, P.~I. (2018).
+\newblock A tutorial on {B}ayesian optimization.
+\newblock {\em arXiv preprint arXiv:1807.02811}.
+
+\bibitem[Garrido-Merch{\'a}n and Hern{\'a}ndez-Lobato,
+  2018]{garrido2018dealing}
+Garrido-Merch{\'a}n, E.~C. and Hern{\'a}ndez-Lobato, D. (2018).
+\newblock Dealing with categorical and integer-valued variables in bayesian
+  optimization with gaussian processes.
+\newblock {\em arXiv preprint arXiv:1805.03463}.
+
+\bibitem[Hennig and Schuler, 2012]{hennig2012entropy}
+Hennig, P. and Schuler, C.~J. (2012).
+\newblock Entropy search for information-efficient global optimization.
+\newblock {\em Journal of Machine Learning Research}, 13(Jun):1809--1837.
+
+\bibitem[Hern{\'a}ndez-Lobato et~al., 2014]{hernandez2014predictive}
+Hern{\'a}ndez-Lobato, J.~M., Hoffman, M.~W., and Ghahramani, Z. (2014).
+\newblock Predictive entropy search for efficient global optimization of
+  black-box functions.
+\newblock In {\em Advances in Neural Information Processing Systems}.
+
+\bibitem[Howard, 1966]{Ho66}
+Howard, R. (1966).
+\newblock {Information Value Theory}.
+\newblock {\em IEEE Transactions on Systems Science and Cybernetics},
+  2(1):22--26.
+
+\bibitem[Huang et~al., 2006]{huang2006sequential}
+Huang, D., Allen, T., Notz, W., and Miller, R. (2006).
+\newblock Sequential kriging optimization using multiple-fidelity evaluations.
+\newblock {\em Structural and Multidisciplinary Optimization}, 32(5):369--382.
+
+\bibitem[Jones et~al., 1998]{jones1998efficient}
+Jones, D.~R., Schonlau, M., and Welch, W.~J. (1998).
+\newblock Efficient global optimization of expensive black-box functions.
+\newblock {\em Journal of Global Optimization}, 13(4):455--492.
+
+\bibitem[Kandasamy et~al., 2017]{kandasamy2017multi}
+Kandasamy, K., Dasarathy, G., Schneider, J., and Poczos, B. (2017).
+\newblock Multi-fidelity {B}ayesian optimisation with continuous
+  approximations.
+\newblock In {\em International Conference on Machine Learning}.
+
+\bibitem[Klein et~al., 2015]{klein2015towards}
+Klein, A., Bartels, S., Falkner, S., Hennig, P., and Hutter, F. (2015).
+\newblock Towards efficient {B}ayesian optimization for big data.
+\newblock In {\em NIPS 2015 Bayesian Optimization Workshop}.
+
+\bibitem[Klein et~al., 2017a]{klein2016fast}
+Klein, A., Falkner, S., Bartels, S., Hennig, P., and Hutter, F. (2017a).
+\newblock Fast {B}ayesian optimization of machine learning hyperparameters on
+  large datasets.
+\newblock In {\em Artificial Intelligence and Statistics}.
+
+\bibitem[Klein et~al., 2017b]{klein-bayesopt17}
+Klein, A., Falkner, S., Mansur, N., and Hutter, F. (2017b).
+\newblock {RoBO}: A flexible and robust {B}ayesian optimization framework in
+  python.
+\newblock In {\em NIPS 2017 Bayesian Optimization Workshop}.
+
+\bibitem[Kushner and Yin, 2003]{kushner2003stochastic}
+Kushner, H. and Yin, G.~G. (2003).
+\newblock {\em Stochastic Approximation and Recursive Algorithms and
+  Applications}, volume~35.
+\newblock Springer Science \& Business Media.
+
+\bibitem[Lam et~al., 2015]{lam2015multifidelity}
+Lam, R., Allaire, D., and Willcox, K. (2015).
+\newblock Multifidelity optimization using statistical surrogate modeling for
+  non-hierarchical information sources.
+\newblock In {\em 56th AIAA/ASCE/AHS/ASC Structures, Structural Dynamics, and
+  Materials Conference}, page 0143.
+
+\bibitem[L'Ecuyer, 1990]{l1990unified}
+L'Ecuyer, P. (1990).
+\newblock A unified view of the {IPA}, {SF}, and {LR} gradient estimation
+  techniques.
+\newblock {\em Management Science}, 36(11):1364--1383.
+
+\bibitem[Li et~al., 2018]{li2016hyperband}
+Li, L., Jamieson, K., DeSalvo, G., Rostamizadeh, A., and Talwalkar, A. (2018).
+\newblock Hyperband: A novel bandit-based approach to hyperparameter
+  optimization.
+\newblock {\em Journal of Machine Learning Research}.
+
+\bibitem[McLeod et~al., 2017]{mcleod2017practical}
+McLeod, M., Osborne, M.~A., and Roberts, S.~J. (2017).
+\newblock Practical {B}ayesian optimization for variable cost objectives.
+\newblock {\em arXiv preprint arXiv:1703.04335}.
+
+\bibitem[Milgrom and Segal, 2002]{milgrom2002envelope}
+Milgrom, P. and Segal, I. (2002).
+\newblock Envelope theorems for arbitrary choice sets.
+\newblock {\em Econometrica}, 70(2):583--601.
+
+\bibitem[Mockus, 1989]{mockus1989bayesian}
+Mockus, J. (1989).
+\newblock {\em The {B}ayesian approach to local optimization}.
+\newblock Springer.
+
+\bibitem[Poloczek et~al., 2017]{poloczek2016multi}
+Poloczek, M., Wang, J., and Frazier, P.~I. (2017).
+\newblock Multi-information source optimization.
+\newblock In {\em Advances in Neural Information Processing Systems}.
+
+\bibitem[Rasmussen and Nickisch, 2016]{gpml}
+Rasmussen, C.~E. and Nickisch, H. (2016).
+\newblock Documentation for {GPML} {M}atlab code version 4.2.
+\newblock http://www.gaussianprocess.org/gpml/code/matlab/doc/, accessed
+  2019-06-30.
+
+\bibitem[Snoek et~al., 2012]{snoek2012practical}
+Snoek, J., Larochelle, H., and Adams, R.~P. (2012).
+\newblock Practical {B}ayesian optimization of machine learning algorithms.
+\newblock In {\em Advances in Neural Information Processing Systems}.
+
+\bibitem[Swersky et~al., 2014]{swersky2014freeze}
+Swersky, K., Snoek, J., and Adams, R.~P. (2014).
+\newblock Freeze-thaw {B}ayesian optimization.
+\newblock {\em arXiv preprint arXiv:1406.3896}.
+
+\bibitem[Wang et~al., 2016]{wang2015parallel}
+Wang, J., Clark, S.~C., Liu, E., and Frazier, P.~I. (2016).
+\newblock Parallel {B}ayesian global optimization of expensive functions.
+\newblock {\em arXiv preprint arXiv:1602.05149}.
+
+\bibitem[Wilson and Nickisch, 2015]{wilson2015kernel}
+Wilson, A.~G. and Nickisch, H. (2015).
+\newblock Kernel interpolation for scalable structured {G}aussian processes
+  ({KISS-GP}).
+\newblock In {\em International Conference on Machine Learning}.
+
+\bibitem[Wu, 2017]{wu2017knowledge}
+Wu, J. (2017).
+\newblock {\em Knowledge Gradient Methods for Bayesian Optimization}.
+\newblock PhD thesis, Cornell University.
+
+\bibitem[Wu and Frazier, 2016]{wu2016parallel}
+Wu, J. and Frazier, P. (2016).
+\newblock The parallel knowledge gradient method for batch {B}ayesian
+  optimization.
+\newblock In {\em Advances in Neural Information Processing Systems}.
+
+\bibitem[Wu et~al., 2017]{wu2017bayesian}
+Wu, J., Poloczek, M., Wilson, A.~G., and Frazier, P.~I. (2017).
+\newblock Bayesian optimization with gradients.
+\newblock In {\em Advances in Neural Information Processing Systems}.
+
+\end{thebibliography}

@@ -1,0 +1,46 @@
+This is BibTeX, Version 0.99d (TeX Live 2017)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: multifidelity.aux
+The style file: apalike.bst
+Database file #1: pKG.bib
+You've used 32 entries,
+            1935 wiz_defined-function locations,
+            632 strings with 8916 characters,
+and the built_in function-call counts, 12159 in all, are:
+= -- 1153
+> -- 541
+< -- 16
++ -- 191
+- -- 180
+* -- 984
+:= -- 2142
+add.period$ -- 96
+call.type$ -- 32
+change.case$ -- 247
+chr.to.int$ -- 31
+cite$ -- 32
+duplicate$ -- 508
+empty$ -- 865
+format.name$ -- 228
+if$ -- 2369
+int.to.chr$ -- 2
+int.to.str$ -- 0
+missing$ -- 32
+newline$ -- 163
+num.names$ -- 96
+pop$ -- 285
+preamble$ -- 1
+purify$ -- 250
+quote$ -- 0
+skip$ -- 331
+stack$ -- 0
+substring$ -- 657
+swap$ -- 52
+text.length$ -- 3
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 188
+warning$ -- 0
+while$ -- 85
+width$ -- 0
+write$ -- 399
