@@ -1,0 +1,523 @@
+%%%%%%%% ICML 2018 EXAMPLE LATEX SUBMISSION FILE %%%%%%%%%%%%%%%%%
+
+\documentclass[letterpaper]{article}
+\usepackage{uai2019}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{color}
+
+\bibliographystyle{abbrvnat}
+
+\usepackage{times}
+% For figures
+\usepackage{amsthm,amsmath,amsfonts}
+\usepackage{algorithmic}
+%\usepackage{algorithmicx}
+\usepackage[Algorithm,ruled]{algorithm}
+\usepackage{bm}
+\usepackage{color}
+\usepackage{bbm}
+\usepackage{color,graphicx}
+\usepackage{multicol}
+%\usepackage[colorlinks]{hyperref}
+%\usepackage{natbib}
+%\usepackage[numbers,sort]{natbib}
+\usepackage[numbers,sort]{natbib}
+
+\PassOptionsToPackage{numbers}{natbib}
+%\bibliographystyle{abbrvnat}
+\usepackage{xr}
+\usepackage{hyperref} 
+% As of 2011, we use the hyperref package to produce hyperlinks in the
+% resulting PDF.  If this breaks your system, please commend out the
+% following usepackage line and replace \usepackage{icml2017} with
+% \usepackage[nohyperref]{icml2017} above.
+
+\graphicspath{{../figures/}}
+\usepackage{enumerate}
+\usepackage{multirow}
+\usepackage[export]{adjustbox}
+\usepackage{subfigure}
+
+\usepackage{comment}
+%\setlength{\marginparwidth}{1.5cm}
+%\setlength{\marginparsep}{0.1cm}
+
+\usepackage{cases}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Prob}{\mathbb{P}}
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\diag}{{\rm diag}}
+\providecommand{\argmax}{{\rm argmax}}
+\providecommand{\argmin}{{\rm argmin}}
+\newcommand{\ds}{\displaystyle }
+
+
+\newcommand{\stcomment}[1]{{\color{red} PF: #1}}
+
+\newcommand{\pfcomment}[1]{{\color{blue} PF: #1}}
+\newcommand{\pfedit}[1]{{\color{blue} #1}}
+%\newcommand{\pfdelete}[1]{{\color{blue} \sout{ #1}}}
+\newcommand{\pfdelete}[1]{}
+
+
+% I want to use \S to refer to \mathcal{S} because I use it a lot,
+% but I also want to be able to use the section symbol.
+% This changes the command for the section symbol to \Section
+% Then below I use renewcommand{\S}{whatever I want}
+\let\Section\S
+
+% OLD NOTATION, 6/27/2019
+%\newcommand{\cost}{\text{cost}}
+%\newcommand{\x}{x}
+%\newcommand{\s}{s}
+%\newcommand{\Y}{\mathcal{Y}}
+%\newcommand{\T}{B}
+%\renewcommand{\S}{\mathcal{S}}
+%\newcommand{\w}{W}
+%\newcommand{\Z}{C}
+%\newcommand{\chol}{D}
+%\newcommand{\sigmatilde}{\tilde{\sigma}}
+%\newcommand{\one}{1}
+% \newcommand{\xS}{\x_{\S}}
+%\newcommand{\A}{\mathbb{A}}
+
+% NEW NOTATION, 6/27/2019
+\newcommand{\cost}{c}
+\newcommand{\x}{\mathbf{x}}
+\newcommand{\s}{\mathbf{s}}
+\newcommand{\Y}{\mathbf{y}}
+\newcommand{\T}{T}
+\newcommand{\Z}{Z}
+\renewcommand{\S}{S}
+\newcommand{\w}{\mathbf{w}}
+\newcommand{\chol}{C}
+\newcommand{\sigmatilde}{\tilde{\mathbf{\sigma}}}
+\newcommand{\one}{\mathbf{1}}
+\newcommand{\xS}{(\x,\S)} % Another choice I considered was \x\times\S
+\newcommand{\A}{A}
+\newcommand{\deriv}{\nabla_{\x,\S}\,}
+
+% CANDIDATE NOTATION FOR SUPPLEMENT
+\newcommand{\z}{\mathbf{z}}
+
+
+% NOTATION STAYING THE SAME
+\newcommand{\loss}{L}
+\newcommand{\taKG}{\text{taKG}}
+\newcommand{\taKGE}{\text{taKG}^\emptyset}
+\newcommand{\VOIE}{\text{VOI}^\emptyset}
+
+
+
+
+
+
+
+\newtheorem{lemma}{Lemma}
+\newtheorem{example}{Example}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+\newtheorem{theorem}{Theorem}
+\theoremstyle{definition}
+\numberwithin{equation}{section}
+\newtheorem{definition}{Definition}
+\newtheorem{remark}{Remark}
+
+\newcommand{\red}[1]{{\color{red} #1}}
+\newcommand{\blue}[1]{{\color{blue} #1}}
+\newcommand{\green}[1]{{\color{green} #1}}
+
+\newcommand{\eq}[1]{(\ref{eq:#1})}
+\newcommand{\eqn}[1]{(\ref{eqn:#1})}
+\newcommand{\lem}[1]{Lemma~\ref{lem:#1}}
+\newcommand{\cor}[1]{Corollary~\ref{cor:#1}}
+\newcommand{\thr}[1]{Theorem~\ref{thr:#1}}
+\newcommand{\con}[1]{Conjecture~\ref{con:#1}}
+\newcommand{\pro}[1]{Proposition~\ref{pro:#1}}
+\newcommand{\que}[1]{Question~\ref{que:#1}}
+\newcommand{\exa}[1]{Example~\ref{exa:#1}}
+\newcommand{\ass}[1]{Assumption~\ref{ass:#1}}
+\newcommand{\dfn}[1]{Definition~\ref{dfn:#1}}
+\newcommand{\rem}[1]{Remark~\ref{rem:#1}}
+\newcommand{\fig}[1]{Figure~\ref{fig:#1}}
+\newcommand{\app}[1]{Appendix~\ref{app:#1}}
+\newcommand{\sectn}[1]{Sect.~\ref{sect:#1}}
+
+\newcommand{\FIXME}[1]{\textcolor{red}{[#1]}}
+
+\renewcommand{\floatpagefraction}{.95}
+
+\renewcommand{\baselinestretch}{0.99}
+
+\newcommand{\lemt}[1]{\ref{lem:#1}}
+\newcommand{\cort}[1]{\ref{cor:#1}}
+\newcommand{\thrt}[1]{\ref{thr:#1}}
+\newcommand{\cont}[1]{\ref{con:#1}}
+\newcommand{\prot}[1]{\ref{pro:#1}}
+\newcommand{\exat}[1]{\ref{exa:#1}}
+\newcommand{\dent}[1]{\ref{den:#1}}
+\newcommand{\asst}[1]{\ref{ass:#1}}
+\newcommand{\remt}[1]{\ref{rem:#1}}
+\newcommand{\figt}[1]{\ref{fig:#1}}
+\newcommand{\appt}[1]{\ref{app:#1}}
+\newcommand{\sect}[1]{\ref{sect:#1}}
+
+\newenvironment{mylist}[1]{\begin{list}{}
+{\setlength{\itemindent}{#1mm}}
+{\setlength{\itemsep}{0ex plus 0.2ex}}
+{\setlength{\parsep}{0.5ex plus 0.2ex}}
+{\setlength{\labelwidth}{10mm}}
+}{\end{list}}
+
+
+\newcommand{\K}[1]{K^{(#1)}}
+\newcommand{\Kn}{\K{n}}
+
+
+% If accepted, instead use the following line for the camera-ready submission:
+%\usepackage[accepted]{icml2018}
+
+% The \icmltitle you define below is probably too long as a header.
+% Therefore, a short form for the running title is supplied here:
+%\icmltitlerunning{Continuous-Fidelity Bayesian Optimization}
+
+\title{Practical Multi-fidelity Bayesian Optimization for Hyperparameter Tuning\\Supplementary Material}
+
+% Practical multi-fidelity Bayesian optimization of iterative machine learning algorithms
+% Practical multi-fidelity Bayesian optimization for hyperparameter tuning
+
+%\newcommand{\orie}{School of Oper. Res. \\ \& Information Eng.}
+%\newcommand{\courant}{Courant Institute \\ of Mathematical Sciences}
+
+\newcommand{\orie}{Operations Research \\ \& Information Eng.}
+\newcommand{\courant}{Courant Institute \\ of Mathematical Sciences}
+
+
+%\newcommand{\orie}{Oper. Res. \& Info. Eng.}
+%\newcommand{\courant}{Courant Inst. of Math. Sciences}
+
+% The author names and affiliations should appear only in the accepted paper.
+%
+\author{ {\bf Jian Wu}\\
+\orie \\
+Cornell University\\
+Ithaca, NY 14850 \\
+\And
+{\bf Saul Toscano-Palmerin}  \\
+\orie \\
+Cornell University\\
+Ithaca, NY 14850 \\
+\And
+{\bf Peter I. Frazier}   \\
+\orie \\
+Cornell University\\
+Ithaca, NY 14850 \\
+\And
+{\bf Andrew Gordon Wilson}\\
+\courant\\
+New York University\\
+New York, NY 10003
+}
+
+
+\begin{document}
+\maketitle
+
+
+\section{Background: Gaussian processes}
+\label{sect:gp}
+
+
+We put a Gaussian process (GP) prior \citep{rasmussen2006gaussian} on the function $g$.  
+The GP prior is defined by its mean function $\mu_{0}: \A \times [0, 1]^m \mapsto \mathbb{R}$ and kernel function $K_{0}: \left\{\A \times [0, 1]^m\right\} \times \left\{\A \times [0, 1]^m \right\} \mapsto \mathbb{R}$.  These mean and kernel functions have hyperparameters, whose inference we discuss below.
+
+We assume that evaluations of $g(\x,\s)$ are subject to additive independent normally distributed noise with common variance $\sigma^2$.
+We treat the parameter $\sigma^2$ as a hyperparameter of our model, and also discuss its inference below.  Our assumption of normally distributed noise with constant variance is common in the BO literature \citep{klein2016fast}. 
+
+Here we use $\z = (\x,\s)$ to refer more briefly to a point, fidelity pair.  
+The posterior distribution on $g$ after observing $n$ function values at points $\z_{(1:n)} := \{(\x_{(1)}, \s_{(1)}), (\x_{(2)}, \s_{(2)}), \cdots, (\x_{(n)}, \s_{(n)})\}$ with observed values $y_{(1:n)} := \{y_{(1)}, y_{(2)}, \cdots, y_{(n)}\}$ remains a Gaussian process \citep{rasmussen2006gaussian}, and $g \mid \z_{(1:n)}, y_{(1:n)} \sim \text{GP}(\mu_n, K_n)$ with $\mu_n$ and $K_n$ as follows, where $I$ is an identity matrix:
+
+\begin{equation*}
+\begin{split}
+&\mu_n(\z) = \mu_{0}(\z) \\
+&+ K_{0}(\z,\z_{1:n}) 
+\left(K_{0}(\z_{1:n},\z_{1:n})+ \sigma^2 I \right)^{-1}  
+(y_{1:n}-\mu_{0}(\z_{1:n}))
+\end{split}
+\end{equation*}
+
+\begin{equation*}
+\begin{split}
+&K_{n}(\z, \z') =  K_{0}(\z,\z')\\
+&- K_{0}(\z,\z_{1:n})  \left(K_{0}(\z_{1:n},\z_{1:n}) +\sigma^2 I\right)^{-1} K_{0}(\z_{1:n},\z').
+\end{split}
+\end{equation*}
+
+%\pfcomment{Need to rephrase}
+We should note that taKG may choose to retain more than one observations per evaluation because a single evaluation of $g$ provides additional trace observations, and so $n$ may be larger than the number of evaluations.
+
+%When $g$ is the validation error in a hyperparameter optimization problem, we recommend putting a GP prior on $\log g(x,s)$, rather than on $g(x,s)$ directly, because (1) $g(x,s)$ is nonnegative and will be allowed to be negative after log scaling, better matching the range of values assumed by the GP, and (2) because $g(x,s)$ can climb steeply over several orders of magnitude as we move away from the optimal $x$, making $\log g(x,s)$ easier to model. 
+
+This statistical approach contains several hyperparameters: the variance $\sigma^2$, and any parameters in the mean and kernel functions.  We treat these hyperparameters in a Bayesian way as proposed in \citet{snoek2012practical}. We analogously train a separate GP on the logarithm of the cost of evaluating $g(x,s)$. 
+
+
+Now, using the notation of the paper, let $\chol_{n}$ be the Cholesky factor of the covariance matrix  $K_n\left(\xS, \xS \right)+\sigma^2 I$. Thus, by the previous equations,
+
+\begin{equation}
+\begin{split}
+&\E_n[g(\x',\one) | \Y(\x,\S)] = \mu_{n}(\x') \\
+&+ K_{n}((\x', \one),\xS)
+(\chol_{n}^T)^{-1}(\chol_{n})^{-1}\\
+& (\Y(\x,\S)-\E_n(\Y(\x,\S))),
+ \end{split}
+\label{eq:variance}
+\end{equation}
+
+and $(\chol_{n})^{-1}(\Y(\x,\S)-\E_n(\Y(\x,\S)))$ follows an independent standard normal random distribution, which shows that
+
+\begin{equation}
+\begin{split}
+&\E_n[g(\x',\one) | \Y(\x,\S)] = \mu_{n}(\x') \\
+&+ \sigmatilde_n(\x',\x,\S)\w,
+\end{split}
+\end{equation}
+
+where $\w$ is an independent standard normal random vector.
+
+
+\section{Proofs Details}
+
+In this section we prove the theorems of the paper. We first show some smoothness properties of $\sigmatilde_{n}$, $\mu_{n}$ and  $\cost_{n}$ in the following lemma.
+\begin{lemma}
+\label{smooth_lemma}
+We assume that the domain  $\A$ is compact, $\mu_0$ is a constant, the kernel $K_{0}$ is continuously differentiable, and the prior parameters on $\log \cost$ continuously differentiable.
+We then have that
+\begin{enumerate}
+\item Fix any $\x$ and $\S$.  Then $\mu_{n}(\x')$ and $\sigmatilde_{n}\left(\x',\x,\S \right)$ are both continuously differentiable in $\x'$.
+\item Fix any $\x'$ and number of fidelities $|\S|$. Then $\sigmatilde_{n}\left(\x',\x,\S \right)$ is continuously  differentiable in $\x$ and each element of $\S$.
+\item $\cost_{n}$ is continuously differentiable.
+\item $\max_{1 \le i \le q}\cost_{n}(x_i, s_i)$ is differentiable in $\x$ and $\s$ if $\left|\argmax_{1\leq i\leq q}\cost_{n}\left(x_{i},s_{i}\right)\right|=1$.
+\end{enumerate}
+\end{lemma}
+\proof{}
+The posterior parameters of the Gaussian process on $\log \cost$ are continuously differentiable if its prior parameters are  continuously differentiable (this proves (3)). 
+
+By (\ref{eq:variance}), we know that that $\sigmatilde_n(\x',\x,\S)= K_n\left((\x', 1), \xS\right) (\chol_{n}^T)^{-1}$
+where $\xS := \{(\x, \s): \s \in \S\}$ and $\chol_{n}$ is the Cholesky factor of the covariance matrix $K_n\left(\xS, \xS \right)+\sigma^2 I$.
+Thus, (1) follows from continuous differentiability of $K_n$.
+
+To prove (2) we only need to show that $(\chol_{n}^T)^{-1}$ is continuously differentiable with respect to $\x$ and the components of $\S$. This follows from the fact that multiplication, matrix inversion (when the inverse exists) ,
+%\pfcomment{how do we know the inverse exists?} \stcomment{It's the Cholesky factor, so it should be invertible}, 
+and Cholesky factorization \citep{smith1995differentiation} preserve continuous differentiability. 
+
+(4) follows easily from (3).
+\endproof
+
+
+We now prove Theorem 1.
+\begin{proof}[Proof of Theorem 1]
+Recall the intuitive explanation of Theorem 1 given in the body of the paper:
+\begin{align*}
+&\deriv\mathbb{E}_{n}\left[\min_{\x'}\left(\mu_n\left(\x',\one\right)+\sigmatilde_{n}\left(\x', \x, \S\right)\cdot \w\right)\right]\\
+&= \mathbb{E}_{n}\left[\deriv\min_{\x'}\left(\mu_n\left(\x',\one\right)+\sigmatilde_{n}\left(\x', \x, \S\right)\cdot \w\right)\right]\\
+&= \mathbb{E}_{n}\left[\deriv\left(\mu_n\left(\x^*,\one\right)+\sigmatilde_{n}\left(\x^*, \x, \S\right)\cdot \w\right) \right]\\
+&= \mathbb{E}_{n}\left[\deriv\sigmatilde_{n}\left(\x^*, \x, \S\right)\cdot \w\right],
+\end{align*}
+where $\x^*$ is a global minimum (over $\x'\in A$) of $h(\x',\x,\S) := \mu_n(\x',\one) + \sigmatilde_n(\x',\x,\S)\cdot \w$, $\w$ is a standard normal random vector, and $\deriv$ indicates the gradient with respect to $\x$ and $\S$ holding $\x^*$ fixed.
+
+To complete the proof, we need to justify the interchange of expectation and the gradient (the second line) and ignoring the dependence of $\x^*$ on $\x$ and $\S$ 
+when taking the gradient (the third line).
+
+We first justify the third line.
+By Lemma~\ref{smooth_lemma}, $h$ is continuously differentiable. 
+Thus, by the envelope theorem (see Corollary 4 of \citealt{milgrom2002envelope}), even though $\x^*$ depends on $\x$ and $\S$, this dependence can be ignored when computing $\deriv h(\x^*,\x,\S)$ (observe that we assume that $\x^*$ is unique in the statement of the theorem).
+%\pfcomment{Do we need to show that $\x^*$ is unique somewhere?} \stcomment{that's one hypothesis of the theorem}
+
+We now justify the fourth line.
+Recall that $A$ is compact, components of $\s$ have domain $[0,1]$, and gradients with respect to $\S$ are taken assuming that $|\S|$ is held fixed.  Thus, the domain of $\x,\S$ is compact.  Also $\sigmatilde_{n}\left(\x',\x,\S \right)$ is continuously  differentiable with respect to $\x,\S$ by~Lemma \ref{smooth_lemma}.  Thus $\left\Vert\sigmatilde_{n}\left(\x',\x,\S\right)\right\Vert$ is bounded. Consequently, Corollary 5.9 of \citet{bartle} implies that we can interchange the gradient and the expectation. 
+
+\end{proof}
+
+The following corollary follows from the previous proof.
+
+\begin{corollary}
+Under the assumptions of the previous theorem, $L_{n}(\x,\S)$ is continuous.
+\end{corollary}
+
+We now prove Theorem 2.
+\proof{}
+We prove this theorem using Theorem 2.3 of Section 5 of \citet{kushner2003stochastic}, which depends on the structure of the stochastic gradient  $G$ of the objective function. 
+In addition, we simplify the notation and denote $(\x_t,\S_t)$  by $Z_t$. %\pfedit{I think we should go back to the $\x_t$, $\S_t$ notation, especially given that $\cost_n(Z)$ should actually be $\cost_n(\x)$}. \stcomment{The problem with that notation is that we are already using $x$ as well, and it may be confusing below. What do you think?}
+
+The theorem from \citet{kushner2003stochastic}, requires the following hypotheses:
+\begin{enumerate}
+\item $\epsilon_{t}\rightarrow0$, $\sum_{t=1}^{\infty}\epsilon_{t}=\infty$,
+and $\sum_{t}\epsilon_{t}^{2}<\infty$.
+\item $\sup_{t}\E\left[\left|G\left(Z_{t}\right)\right|^{2}\right]<\infty$
+\item There exist uniformly continuous functions $\left\{ \lambda_{t}\right\} _{t\geq0}$
+of $Z$, and random vectors $\left\{ \beta_{t}\right\} _{t\geq0}$
+, such that $\beta_{t}\rightarrow0$ almost surely and
+\[
+E_{n}\left[G\left(Z_{t}\right)\right]=\lambda_{t}\left(Z_{t}\right)+\beta_{t}.
+\]
+Furthermore, there exists a continuous function $\bar{\lambda}$,
+such that for each $Z\in \A^{q}$,
+\[
+\lim_{n}\left|\sum_{i=1}^{m\left(r_{m}+s\right)}\epsilon_{i}\left[\lambda_{i}\left(Z\right)-\bar{\lambda}\left(Z\right)\right]\right|=0
+\]
+for each $s\geq0$, where $m\left(r\right)$ is the unique value of
+$k$ such that $t_{k}\leq t<t_{k+1}$, where $t_{0}=0$,$t_{k}=\sum_{i=0}^{k-1}\epsilon_{i}$.
+\item There exists a continuously differentiable real-valued function $\phi$,
+such that $\bar{\lambda}=-\nabla\phi$ and it is constant on each
+connected subset of stationary points.
+\item The constraint functions defining $\A$ are continuously differentiable.
+\end{enumerate}
+We now prove that our problem satisfies these hypotheses. (1) is true
+by the hypothesis of the lemma. 
+
+We now prove (2).  Letting $\x^*$ be defined in terms of $\w$ as in Theorem~2 and choosing a generic fixed $Z$, 
+%\pfcomment{Perhaps it's worth a note that we switched notation from $\E_n$ to $\E$.  Does the condition we need for Kushner include the randomness over $Z_t$?  Or holding $Z_t$ fixed?} \stcomment{Includes the randomness over $Z_t$, but we take any $Z$ and later we take the supremum}
+\begin{equation*}
+\begin{split}
+\E\left[\left|\nabla_\x\ \sigmatilde_{n}\left(\x^*, Z \right) \cdot \w \right|^{2} \right] \\
+\leq \E\left[\left\Vert \nabla\sigmatilde_{n}\left(\x^*,Z\right)\right\Vert ^{2}\left\Vert \w \right\Vert ^{2} \right] \leq M |\S|
+\end{split}
+\end{equation*}
+where $M:=\sup_{\x,\z}\left\Vert \nabla\sigmatilde_{n}\left(\x,\z\right)\right\Vert ^{2}$
+and $|\S|$ is the dimensionality of $\w$.
+$M$ is finite because the domain of the problem is compact and $\nabla\sigmatilde_{n}\left(\x,\z\right)$
+is continuous by Lemma 1. Since $\cost_n$ is continuously
+differentiable and bounded below, we conclude
+that the supremum over $Z$ of $\E\left[\left|G\left(Z\right)\right|^{2}\right]$
+is bounded. 
+
+% If we are averaging multiple replicates, then that can be handled with 
+
+We now prove (3). Our definition of $\lambda_t$ will be the same for all $t$.  Define
+\begin{equation*}
+\begin{split}
+\lambda_{t}\left(Z\right)  &=
+\E\left[\frac{\cost_n\left(Z\right)\nabla\sigmatilde_{n}\left(\x^*,Z\right)\w}{\cost_n\left(Z\right)^{2}}\right] \\
+&-\E\left[\frac{\nabla \cost_n\left(Z\right)}{\cost_n\left(Z\right)^{2}}\left(\mu_{n}\left(\x^*,\one\right)+\sigmatilde_{n}\left(\x^*,Z\right)\w\right)\right].
+\end{split}
+\end{equation*}
+We will prove that
+$\lambda_{t}$ is continuous. In the proof of Theorem 1, we show that
+$\nabla\sigmatilde_{n}\left(\x^*,Z\right) \w$ is continuous in
+$Z$. Furthermore,
+\begin{eqnarray*}
+\left\Vert \nabla\sigmatilde_{n}\left(y_{1},Z\right)\w^{1}\right\Vert  & \leq & \left\Vert \nabla\sigmatilde_{n}\left(y_{1},Z\right)\right\Vert \left\Vert \w\right\Vert \\
+ & \leq & L\left\Vert \w\right\Vert .
+\end{eqnarray*}
+Consequently $\E\left[\nabla\sigmatilde_{n}\left(Y,Z\right)\w\right]$
+is continuous by Corollary 5.7 of \citet{bartle}. In Theorem 1, we also show
+that $\E\left[\left(\mu_{n}\left(Y,\one\right)+\sigmatilde_{n}\left(Y,Z\right)\w\right)\right]$
+is continuous in $Z$. Since $\cost_n$ is continuously differentiable,
+we conclude that $\lambda_{t}$ is continuous. By defining $\beta_{t}=0$
+for all $t$, and $\bar{\lambda}=\lambda_{1}$, we conclude the proof
+of (3).
+
+Finally, define $\phi\left(Z\right)=-\E\left[\frac{\mu_{n}\left(Y,\one\right)+\sigmatilde_{n}\left(Y,Z\right)\w}{\cost_n\left(Z\right)}\right]$.
+Observe that in Lemma 2, we show that we can interchange the expectation
+and the gradient in $\E\left[\nabla\left(\mu_{n}\left(Y\right)+\sigmatilde_{n}\left(Y,Z\right)\w\right)\right]$,
+and so $\lambda_{m}\left(Z\right)=-\nabla\phi\left(Z\right).$ In
+a connected subset of stationary points, we have that $\lambda_{m}\left(Z\right)=0$,
+and so $\phi\left(Z\right)$ is constant. This ends the proof of the
+theorem.
+\endproof
+
+\begin{proof}[Proof of Proposition 1]
+Since
+\begin{eqnarray*}
+VOI_{n}(x, s) &:=& \\
+\E_n[\mu^*(x, 1) - \min_{x'} (\mu_n(x') + C_{n}(x', (x, s)) W]
+\end{eqnarray*}
+where $W$ is a standard normal random variable. By Jensen's inequality, we have
+\begin{eqnarray*}
+VOI_{n}(x, s) &:=& \E_n[\mu^*(x, 1) - \min_{x'} (u_{n}\left(x',s,W\right))]\\
+&\ge& \mu^*(x, 1) - \min_{x'} \E_n(u_{n}\left(x',s,W\right)) = 0.
+\end{eqnarray*}
+where $u_{n}\left(x,s,W\right):=\mu^n(x', 1) + C_{n}((x', 1), (x, s)) W)$.
+The inequality becomes equal only if $\min_{x'} (\mu_n(x') + C_{n}(x', (x, s)) W$ is a linear function of $W$ for any fixed $(x, s)$, i.e the argmin for the inner optimization function doesn't change as we vary $W$, which is not true if $K_{n}((x', 1), (x, s))>0$ i.e. evaluating at $(x, s)$ provides value to determine the argmin of the surface $(x, 1)$.
+\end{proof}
+
+\begin{proof}[Proof of Proposition 2]
+The proof follows a very similar argument than the previous proof. By Jensen's inequality, we have that
+
+\begin{eqnarray*}
+\E_{n}\left[\min_{x'}\E_{n}\left[g(x',1)\mid\Y(x,\S)\right]\right] & \geq\\
+\E_{n}\left[\min_{x'}\E_{n}\left[g(x',1)\mid\Y(x,\S\bigcup C(\S))\right]\right]
+\end{eqnarray*}
+
+The inequality becomes equal only if the argmin for the inner optimization function doesn't change as we vary the normal random vector, which is not true under our assumptions.
+
+
+\end{proof}
+
+\section{GPs for Hyperparameter Optimization}
+\label{sect:gp-ho}
+In the context of hyperparameter optimization with two continuous fidelities, i.e. the number of training iterations ($s_{(1)}$) and the amount of training data ($s_{(2)}$), we set the kernel function of the GP as
+\begin{eqnarray*}
+K_{0}(z, \tilde z) = K(x, \tilde x) \times K_1(s_{(1)}, \tilde s_{(1)}) \times K_2(s_{(2)},, \tilde s_{(2)}),
+\end{eqnarray*}
+where $K(\cdot, \cdot)$ is a square-exponential kernel. If we assume that the learning curve looks like
+\begin{eqnarray}
+g(x, s) = h(x) \times \left(\beta_0 + \beta_1\exp{(-\lambda s_{(1)})}\right) \times l(s_{(2)}),
+\label{eqn:shape}
+\end{eqnarray}
+then inspired by \cite{swersky2014freeze}, we set the kernel $K_1(\cdot, \cdot)$ as
+\begin{eqnarray*}
+K_1(s_{(1)}, \tilde s_{(1)}) = \left( w + \frac{\beta^{\alpha}}{(s_{(1)} + \tilde s_{(1)} + \beta^{\alpha})}\right),
+\end{eqnarray*}
+where $w, \beta, \alpha > 0$ are hyperparameters. We add an intercept $w$ compared to the kernel in \cite{swersky2014freeze} to model the fact that the loss will not diminish. We assume that the kernel $K_2(\cdot, \cdot)$ has the form
+\begin{eqnarray*}
+K_2(s_{(2)}, \tilde s_{(2)}) = \left(c + (1-s_{(2)})^{(1+\delta)}(1-\tilde s_{(2)})^{(1+\delta)}\right),
+\end{eqnarray*}
+where $c, \delta > 0$ are hyperparameters.
+
+All the hyperparameters can be treated in a Bayesian way as proposed in \citet{snoek2012practical}.
+
+\section{Additional experimental details}
+\label{sect:addition}
+\subsection{Synthetic experiments}
+Here we define in detail the synthetic test functions on which we perform numerical experiments
+The test functions are: 
+\begin{equation*}
+\begin{split}
+&\text{augmented-Branin}(\x, \s) \\
+&\ = \left(x_2 - \left(\frac{5.1}{4 \pi^2} - 0.1*(1-s_1)\right) x_1^2 + \frac{5}{\pi} x_1 - 6\right)^2 \\
+&\ \ + 10*\left(1-\frac{1}{8\pi}\right)\cos(x_1) + 10\\
+\end{split}
+\end{equation*}
+
+
+\begin{equation*}
+\begin{split}
+&\text{augmented-Hartmann}(\x, \s) \\
+&\ = \left(\alpha_1-0.1*(1-s_1)\right) \exp{\left(-\sum_{j=1}^d A_{ij} (x_j - P_{1j})^2\right)}\\
+&\ \ + \sum_{i=2}^{4} \alpha_i \exp{\left(-\sum_{j=1}^d A_{ij} (x_j - P_{ij})^2\right)}\\
+\end{split}
+\end{equation*}
+
+\begin{equation*}
+\begin{split}
+&\text{augmented-Rosenbrock}(\x, \s) \\
+&\  = \sum_{i=1}^2 \left(100*(x_{i+1}-x_i^2 + 0.1*(1-s_1))^2\right.\\
+&\ \  + \left.\left(x_i-1+0.1*(1-s_2)^2\right)^2\right).
+\end{split}
+\end{equation*}
+
+\subsection{Real-world experiments}
+The range of search domain for feedforward NN experiments: the learning rate in $[10^{-6}, 10^0]$, dropout rate in $[0, 1]$, batch size in $[2^5, 2^{10}]$ and the number of units at each layer in $[100, 1000]$.
+
+The range of search domain for CNN experiments: the learning rate in $[10^{-6}, 1.0]$, batch size $[2^5, 2^{10}]$, and number of filters in each convolutional block in $[2^5, 2^9]$. 
+
+
+
+\bibliography{pKG}
+
+\end{document}

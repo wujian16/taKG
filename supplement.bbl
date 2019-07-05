@@ -1,0 +1,53 @@
+\begin{thebibliography}{8}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Bartle(1966)]{bartle}
+R.~G. Bartle.
+\newblock \emph{The elements of integration}.
+\newblock John Wiley \& Sons, 1966.
+
+\bibitem[Klein et~al.(2017)Klein, Falkner, Bartels, Hennig, and
+  Hutter]{klein2016fast}
+A.~Klein, S.~Falkner, S.~Bartels, P.~Hennig, and F.~Hutter.
+\newblock Fast {B}ayesian optimization of machine learning hyperparameters on
+  large datasets.
+\newblock In \emph{Artificial Intelligence and Statistics}, 2017.
+
+\bibitem[Kushner and Yin(2003)]{kushner2003stochastic}
+H.~Kushner and G.~G. Yin.
+\newblock \emph{Stochastic Approximation and Recursive Algorithms and
+  Applications}, volume~35.
+\newblock Springer Science \& Business Media, 2003.
+
+\bibitem[Milgrom and Segal(2002)]{milgrom2002envelope}
+P.~Milgrom and I.~Segal.
+\newblock Envelope theorems for arbitrary choice sets.
+\newblock \emph{Econometrica}, 70\penalty0 (2):\penalty0 583--601, 2002.
+
+\bibitem[Rasmussen and Williams(2006)]{rasmussen2006gaussian}
+C.~E. Rasmussen and C.~K.~I. Williams.
+\newblock \emph{Gaussian Processes for Machine Learning}.
+\newblock MIT Press, 2006.
+\newblock ISBN ISBN 0-262-18253-X.
+
+\bibitem[Smith(1995)]{smith1995differentiation}
+S.~P. Smith.
+\newblock Differentiation of the cholesky algorithm.
+\newblock \emph{Journal of Computational and Graphical Statistics}, 4\penalty0
+  (2):\penalty0 134 -- 147, 1995.
+
+\bibitem[Snoek et~al.(2012)Snoek, Larochelle, and Adams]{snoek2012practical}
+J.~Snoek, H.~Larochelle, and R.~P. Adams.
+\newblock Practical {B}ayesian optimization of machine learning algorithms.
+\newblock In \emph{Advances in Neural Information Processing Systems}, 2012.
+
+\bibitem[Swersky et~al.(2014)Swersky, Snoek, and Adams]{swersky2014freeze}
+K.~Swersky, J.~Snoek, and R.~P. Adams.
+\newblock Freeze-thaw {B}ayesian optimization.
+\newblock \emph{arXiv preprint arXiv:1406.3896}, 2014.
+
+\end{thebibliography}
